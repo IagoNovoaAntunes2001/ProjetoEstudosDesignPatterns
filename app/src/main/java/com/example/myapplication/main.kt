@@ -1,8 +1,13 @@
 package com.example.myapplication
 
-fun main() {
+import com.example.myapplication.designPatterns.Memento.designMemento
 
+fun main() {
+    designMemento()
 }
+
+
+
 
 
 
