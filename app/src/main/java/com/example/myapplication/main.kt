@@ -1,10 +1,11 @@
 package com.example.myapplication
 
-import com.example.myapplication.designPatterns.Command.designPatternCommand
+import com.example.myapplication.designPatterns.Singleton.mainDesignSingleton
 
 fun main() {
-    designPatternCommand()
+    mainDesignSingleton()
 }
+
 
 
 
