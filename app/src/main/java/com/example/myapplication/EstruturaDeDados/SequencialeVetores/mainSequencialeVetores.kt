@@ -2,6 +2,18 @@ package com.example.myapplication.EstruturaDeDados.SequencialeVetores
 
 import com.example.myapplication.EstruturaDeDados.models.Aluno
 
+// Um vetor geralmente usa um array por baixo dos panos.
+// É uma estrutura sequencial, ou seja,
+// os elementos são armazenados um ao lado do outro.
+
+// Um vetor, ou arranjo (array), é uma estrutura de dados que
+// armazena uma sequência de objetos, todos do mesmo tipo,
+// em posições consecutivas da memória RAM (random access memory) do computador.
+
+// É um conjunto de variáveis do mesmo tipo acessíveis com um único nome.
+// Armazenadas de forma contínua e ocupando as posições de forma fixas.
+// Pode-se dizer que vetor é uma matriz unidimensional.
+
 fun mainVetor() {
     val n1 = Aluno(nome = "Iago")
     val n2 = Aluno(nome = "Caio")
