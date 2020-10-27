@@ -1,10 +1,12 @@
 package com.example.myapplication
 
-import com.example.myapplication.EstruturaDeDados.Pilha.mainPilha
+import com.example.myapplication.estruturaDeDados.filas.mainFila
 
 fun main() {
-    mainPilha()
+    mainFila()
 }
+
+
 
 
 
