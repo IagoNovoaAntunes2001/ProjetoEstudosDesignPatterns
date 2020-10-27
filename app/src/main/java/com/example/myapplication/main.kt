@@ -1,10 +1,13 @@
 package com.example.myapplication
 
-import com.example.myapplication.estruturaDeDados.conjuntos.mainConjunto
+import com.example.myapplication.estruturaDeDados.listaLigadaEDuplamenteLigada.mainListaLigadaEDuplamenteLigada
 
 fun main() {
-    mainConjunto()
+    mainListaLigadaEDuplamenteLigada()
 }
+
+
+
 
 
 
