@@ -2,6 +2,7 @@ package com.example.myapplication.estruturaDeDados.listaLigadaEDuplamenteLigada
 
 import com.example.myapplication.estruturaDeDados.models.Celula
 
+
 class ListaLigada {
 
     private var totalDeElementos: Int = 0
@@ -9,44 +10,49 @@ class ListaLigada {
     private var ultima: Celula? = null
 
     fun adicionaNoComeco(elemento: String) {
-        val nova = Celula(
-            elemento,
-            primeira
-        )
-        this.primeira = nova
-
         if (totalDeElementos == 0) {
-            this.ultima = primeira
+            val nova = Celula(elemento = elemento)
+            primeira = nova
+            ultima = nova
+        } else {
+            val nova = Celula(proximo = primeira, elemento = elemento)
+            primeira?.anterior = nova
+            primeira = nova
         }
-
         totalDeElementos++
     }
 
     fun adiciona(elemento: String) {
-        if (totalDeElementos == 0) return adicionaNoComeco(elemento)
-
-        val nova = Celula(
-            elemento = elemento,
-            proximo = null
-        )
-        this.ultima?.proximo = nova
-        this.ultima = nova
-
-        totalDeElementos++
+        if(this.totalDeElementos == 0) {
+            adicionaNoComeco(elemento)
+        } else {
+            val nova = Celula(elemento)
+            this.ultima?.proximo = nova
+            nova.anterior = ultima
+            this.ultima = nova
+            this.totalDeElementos++
+        }
     }
 
-    fun adiciona(posicao: Int, elemento: String) {
-        if (posicao == 0) return adicionaNoComeco(elemento)
+     fun adiciona(posicao: Int, elemento: String){
+         when (posicao) {
+             0 -> {
+                 adicionaNoComeco(elemento)
+             }
+             this.totalDeElementos -> {
+                 this.adiciona(elemento)
+             }
+             else -> {
+                 val anterior = pegaCelula (posicao - 1)
+                 val proxima = anterior?.proximo
 
-        if (posicao == totalDeElementos) return adiciona(elemento)
-
-        val anterior = pegaCelula(posicao - 1)
-        val nova = Celula(
-            elemento,
-            anterior?.proximo
-        )
-        anterior?.proximo = nova
-        totalDeElementos++
+                 val nova = Celula(proximo = anterior?.proximo, elemento = elemento)
+                 nova.anterior = anterior
+                 anterior?.proximo = nova
+                 proxima?.anterior = nova
+                 this.totalDeElementos++
+             }
+         }
     }
 
     private fun pegaCelula(posicao: Int): Celula? {
@@ -78,16 +84,47 @@ class ListaLigada {
         if (totalDeElementos == 0) this.primeira = ultima
     }
 
+    fun removeDoFim() {
+        if (totalDeElementos == 1) return removeDoComeco()
+
+        val penultimo = ultima?.anterior
+        penultimo?.proximo = null
+        ultima = penultimo
+        totalDeElementos--
+    }
+
     fun remove(posicao: Int) {
-        //val anterior = 
+        when (posicao) {
+            0 -> return removeDoComeco()
+            totalDeElementos - 1 -> {
+                return removeDoFim()
+            }
+            else -> {
+                val anterior = pegaCelula(posicao - 1)
+                val atual: Celula? = anterior?.proximo
+                val proxima: Celula? = atual?.proximo
+
+                anterior?.proximo = proxima
+                proxima?.anterior = anterior
+
+                totalDeElementos--
+            }
+        }
+    }
+
+    fun contem(elemento: String): Boolean {
+        var atual = primeira
+        while (atual?.proximo != null) {
+            if (atual.elemento == elemento) {
+                return true
+            }
+            atual = atual.proximo
+        }
+        return false
     }
 
     fun tamanho(): Int {
         return totalDeElementos
-    }
-
-    fun contem(): Boolean {
-        return false
     }
 
     override fun toString(): String {
