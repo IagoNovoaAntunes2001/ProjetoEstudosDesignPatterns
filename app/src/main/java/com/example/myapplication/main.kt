@@ -1,10 +1,11 @@
 package com.example.myapplication
 
-import com.example.myapplication.estruturaDeDados.filas.mainFila
+import com.example.myapplication.estruturaDeDados.conjuntos.mainConjunto
 
 fun main() {
-    mainFila()
+    mainConjunto()
 }
+
 
 
 
