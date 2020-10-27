@@ -9,7 +9,7 @@ import com.example.myapplication.designPatterns.models.Numero
 // e aí interprete essa árvore.
 // É um padrão de projeto bem peculiar, e com utilização bem específica.
 
-fun mainDesignInterpreter() {
+fun main() {
     val esquerda: Expressao = Multiplicacao(Numero(10), Numero(5))
     val direita: Expressao = Divisao(Numero(5), Numero(1))
 

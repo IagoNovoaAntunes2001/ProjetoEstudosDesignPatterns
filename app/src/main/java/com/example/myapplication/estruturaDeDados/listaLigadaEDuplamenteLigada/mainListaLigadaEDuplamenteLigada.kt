@@ -22,7 +22,7 @@ package com.example.myapplication.estruturaDeDados.listaLigadaEDuplamenteLigada
 // a próxima. A grande vantagem é que muitas operações necessitam também
 // da célular anterior, e tudo fica mais fácil com a referência armazenada em cada célula.
 
-fun mainListaLigadaEDuplamenteLigada() {
+fun main() {
     val lista = ListaLigada()
     // Inserção no começo
     println(lista)

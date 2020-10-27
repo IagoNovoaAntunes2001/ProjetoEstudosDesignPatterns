@@ -10,7 +10,7 @@ import com.example.myapplication.designPatterns.State.models.Orcamento
 // através da criação de classes que representem cada estado
 // e saiba controlar as transições.
 
-fun designState() {
+fun main() {
     val orcamento =
         Orcamento(200.0)
     orcamento.aprova()

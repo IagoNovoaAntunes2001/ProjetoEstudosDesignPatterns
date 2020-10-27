@@ -16,7 +16,7 @@ package com.example.myapplication.estruturaDeDados.conjuntos
 // ou agregação, de dados. Os dados podem ser booleanos,
 // números, caracteres ou outras estruturas de dados.
 
-fun mainConjunto() {
+fun main() {
     val conjunto = Conjunto()
     // Inserção do conjunto
     conjunto.adiciona("Mauricio")

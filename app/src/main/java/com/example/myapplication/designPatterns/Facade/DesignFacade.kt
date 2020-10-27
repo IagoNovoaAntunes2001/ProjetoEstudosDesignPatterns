@@ -14,7 +14,7 @@ import com.example.myapplication.designPatterns.models.Corpo
 // interface simplificada ao cliente.
 
 
-fun mainDesignFacade() {
+fun main() {
     val corpoFacade =
         CorpoFacade(cabeca = Cabeca(corCabelo = "Escura"), corpo = Corpo(numPintas = 3))
     corpoFacade.caracteristicasCorpo()

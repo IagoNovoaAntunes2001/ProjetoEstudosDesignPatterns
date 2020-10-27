@@ -14,7 +14,7 @@ import com.example.myapplication.estruturaDeDados.models.Aluno
 // Armazenadas de forma contínua e ocupando as posições de forma fixas.
 // Pode-se dizer que vetor é uma matriz unidimensional.
 
-fun mainVetor() {
+fun main() {
     val n1 = Aluno(nome = "Iago")
     val n2 = Aluno(nome = "Caio")
     val n3 = Aluno(nome = "Paulo")

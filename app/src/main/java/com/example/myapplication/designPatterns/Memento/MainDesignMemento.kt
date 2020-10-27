@@ -12,7 +12,7 @@ import java.util.*
 // sem que isso cause problemas com o encapsulamento.
 
 
-fun designMemento() {
+fun main() {
     val historico = Historico()
 
     val contrato1 = Contrato(Calendar.getInstance(), "Iago", TipoContrato.NOVO)

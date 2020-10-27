@@ -15,7 +15,7 @@ import java.util.*
 // sabemos que a inserção e a remoção do último elemento gasta tempo constante
 // (basta acertar as referências).
 
-fun mainPilha() {
+fun main() {
     val pilha = Pilha()
     // Inserção na pilha
     pilha.push(nome = "Iago")

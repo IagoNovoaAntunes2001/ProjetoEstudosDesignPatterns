@@ -11,7 +11,7 @@ import com.example.myapplication.designPatterns.models.Pedido
 // pois não é possível executá-lo naquele momento (pois precisamos
 // por em uma fila ou coisa do tipo).
 
-fun designPatternCommand() {
+fun main() {
     val pedido1 = Pedido("Iago", 200.0)
     val pedido2 = Pedido("Iago", 250.0)
 

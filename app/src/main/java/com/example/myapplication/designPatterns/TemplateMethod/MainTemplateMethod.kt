@@ -14,7 +14,7 @@ import com.example.myapplication.designPatterns.models.Orcamento
 // quanto dos detalhes do algoritmo, já que cada classe tem
 // sua responsabilidade bem separada.
 
-fun designTemplateMethod() {
+fun main() {
     val ICPP = ICPP()
     println(ICPP.calcula(Orcamento(400.0, listOf(Item("LAPIS", 600.0)))))
 

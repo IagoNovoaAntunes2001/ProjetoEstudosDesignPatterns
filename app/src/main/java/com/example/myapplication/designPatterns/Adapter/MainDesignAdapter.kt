@@ -22,7 +22,7 @@ package com.example.myapplication.designPatterns.Adapter
 // vai lá para implementar um "adaptador" para o sistema antigo, de forma a
 // caber no modelo já existente.
 
-fun mainDesignAdapter() {
+fun main() {
     val day: Relogio = RelogioImpl()
     println(day.hoje())
 }

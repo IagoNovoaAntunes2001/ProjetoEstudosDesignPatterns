@@ -12,7 +12,8 @@ import com.example.myapplication.designPatterns.models.Orcamento
 // e ainda provê uma maneira flexível e
 // desacoplada de juntar esses comportamentos novamente.
 
-fun designChain() {
+
+fun main() {
     val d1: Desconto = DescontoPorCincoItensImpl()
     val d2: Desconto = DescontoPorMaisDeQuinhentosReaisImpl()
     val d3: Desconto = DescontoPorVendaCasada()

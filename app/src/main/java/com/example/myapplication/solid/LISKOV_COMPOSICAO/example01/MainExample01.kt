@@ -1,6 +1,6 @@
 package com.example.myapplication.solid.LISKOV_COMPOSICAO.example01
 
-fun mainExampleDip_LISKOV() {
+fun main() {
 //    val manipulador = ManipuladorDeSaldo()
 //    val iago = ContaComum(manipulador)
 //    iago.deposita(200.0)

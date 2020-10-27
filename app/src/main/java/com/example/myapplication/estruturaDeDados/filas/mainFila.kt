@@ -14,7 +14,7 @@ import java.util.*
 // Se usarmos uma lista ligada por baixo dos panos,
 // adicionar e remover do começo leva tempo constante.
 
-fun mainFila() {
+fun main() {
     val fila = Fila()
     println(fila.vazia())
     // Inserindo

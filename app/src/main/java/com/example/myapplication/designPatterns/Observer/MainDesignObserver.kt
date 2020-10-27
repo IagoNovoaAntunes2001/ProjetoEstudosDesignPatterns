@@ -11,7 +11,7 @@ import com.example.myapplication.designPatterns.models.Fatura
 // à classe principal, reduzindo o acoplamento entre essas ações,
 // facilitando a manutenção e evolução do código.
 
-fun designObserver() {
+fun main() {
     val fatura = Fatura(
         200.0,
         "iago"

@@ -10,7 +10,7 @@ import com.example.myapplication.designPatterns.models.Orcamento
 // bastando escolher no momento da instanciação, quais instancias serão utilizadas
 // para realizar o trabalho.
 
-fun desginDecorator() {
+fun main() {
     val impostos: Imposto = ISSImpl(ICMSImpl())
     val orcamento =
         Orcamento(200.0)

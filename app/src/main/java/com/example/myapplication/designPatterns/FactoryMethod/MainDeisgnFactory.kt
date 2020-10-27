@@ -15,7 +15,7 @@ package com.example.myapplication.designPatterns.FactoryMethod
 // Essa fábrica pode descobrir como criar o objeto dentro dela própria,
 // mas geralmente ela não precisa de muitas informações para criar o objeto.
 
-fun mainDesignFactoryMethod() {
+fun main() {
     val conexao = ConnectionFactory()
     println(conexao.connection)
 }

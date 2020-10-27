@@ -5,7 +5,7 @@ package com.example.myapplication.designPatterns.Singleton
 // Singleton é uma classe que permite que apenas uma única instância de si seja criada
 // e, geralmente, fornece acesso simples a essa instância.
 
-fun mainDesignSingleton() {
+fun main() {
     val a = Singleton.getInstance()
     val b = Singleton.getInstance()
 

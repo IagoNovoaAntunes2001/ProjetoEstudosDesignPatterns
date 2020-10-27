@@ -21,7 +21,7 @@ package com.example.myapplication.designPatterns.Bridge
 // vai lá para implementar um "adaptador" para o sistema antigo, de forma a
 // caber no modelo já existente.
 
-fun mainDesignBridge(typeService: String) {
+fun main() {
     val factoryMapa = FactoryMapa()
-    factoryMapa.getFactory(type = typeService)?.pegaEndereco(rua = "213")
+    factoryMapa.getFactory(type = "G")?.pegaEndereco(rua = "213")
 }

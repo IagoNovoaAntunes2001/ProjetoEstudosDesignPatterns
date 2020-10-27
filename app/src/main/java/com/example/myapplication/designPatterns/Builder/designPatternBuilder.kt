@@ -12,6 +12,11 @@ import java.util.*
 // ainda facilitamos a vida das classes que precisam criar essa classe complexa,
 // afinal a interface do Builder tende a ser mais clara e fácil de ser usada.
 
+fun main() {
+    designPatternBuilder()
+    builderItemDaNota()
+}
+
 fun designPatternBuilder() {
     val builder = NotaFiscalBuilder(
         "123", "123123", arrayListOf(

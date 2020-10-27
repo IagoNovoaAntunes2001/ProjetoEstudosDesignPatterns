@@ -16,7 +16,7 @@ import com.example.myapplication.designPatterns.models.Orcamento
 // esse cliente consiga trabalhar com N diferentes algoritmos sem
 // precisar alterar o seu código.
 
-fun designStrategy() {
+fun main() {
     val novoImposto: Imposto = ICCCImpl()
     println(novoImposto.calcula(
         Orcamento(
