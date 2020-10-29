@@ -11,12 +11,12 @@ private fun ranges() {
     }
 
     val numerosPares = 0..100 step 2
-    for (numeros in numerosPares) {
+    numerosPares.forEach { numeros ->
         //println(numeros)
     }
 
     val numerosParesUntil = 2.until(100) step 2
-    for (numeros in numerosParesUntil) {
+    numerosParesUntil.forEach { numeros ->
         //println(numeros)
     }
 
