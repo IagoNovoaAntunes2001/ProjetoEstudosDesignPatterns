@@ -60,4 +60,13 @@ class LeilaoTest {
 
         assertEquals(100.0, leilao.menorLance, 0.0001)
     }
+
+    @Test
+    fun getTresLances_QuandoReceberOsTres_QuandoRecebeExatosTresLances() {
+        leilao.propoe(Lance(iago, 300.0))
+        leilao.propoe(Lance(Usuario("Caio"), 300.0))
+        leilao.propoe(Lance(Usuario("Paulo"), 300.0))
+
+        assertEquals(3, leilao.lances?.size)
+    }
 }
