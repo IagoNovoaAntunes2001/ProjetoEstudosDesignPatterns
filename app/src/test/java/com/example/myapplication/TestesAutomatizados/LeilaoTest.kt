@@ -63,14 +63,50 @@ class LeilaoTest {
     }
 
     @Test
-    fun getTresLances_QuandoReceberOsTres_QuandoRecebeExatosTresLances() {
+    fun getTresLances_QuandoReceberOsTres_DevolverOsTres() {
         leilao.propoe(Lance(iago, 300.0))
         leilao.propoe(Lance(Usuario("Caio"), 500.0))
         leilao.propoe(Lance(Usuario("Paulo"), 400.0))
 
         assertEquals(3, leilao.lances?.size)
-        assertEquals( 300.0,  leilao.lances?.get(0)?.valor!!, DELTA)
+        assertEquals(300.0, leilao.lances?.get(0)?.valor!!, DELTA)
         assertEquals(400.0, leilao.lances?.get(1)?.valor!!, DELTA)
         assertEquals(500.0, leilao.lances?.get(2)?.valor!!, DELTA)
+    }
+
+    @Test
+    fun getNenhum_QuandoNaoReceberNada_devolverNada() {
+        assertEquals(0, leilao.tresMaioresLances().size)
+    }
+
+    @Test
+    fun getTresMaioresLances_quandoReceberUm_DevolverTresMaiores() {
+        leilao.propoe(Lance(iago, 300.0))
+
+        assertEquals(1, leilao.tresMaioresLances().size)
+        assertEquals(300.0, leilao.tresMaioresLances()[0].valor, DELTA)
+    }
+
+    @Test
+    fun getTresMaioresLances_quandoReceberDois_DevolverTresMaiores() {
+        leilao.propoe(Lance(iago, 300.0))
+        leilao.propoe(Lance(Usuario("Caio"), 400.0))
+
+        assertEquals(2, leilao.tresMaioresLances().size)
+        assertEquals(300.0, leilao.tresMaioresLances()[0].valor, DELTA)
+        assertEquals(400.0, leilao.tresMaioresLances()[1].valor, DELTA)
+    }
+
+    @Test
+    fun getTresMaioresLances_quandoReceberMaisDeTresLances_DevolverTresMaiores() {
+        leilao.propoe(Lance(iago, 300.0))
+        leilao.propoe(Lance(Usuario("Caio"), 400.0))
+        leilao.propoe(Lance(Usuario("Paio"), 600.0))
+        leilao.propoe(Lance(Usuario("Paulo"), 500.0))
+
+        assertEquals(3, leilao.tresMaioresLances().size)
+        assertEquals(300.0, leilao.tresMaioresLances()[0].valor, DELTA)
+        assertEquals(400.0, leilao.tresMaioresLances()[1].valor, DELTA)
+        assertEquals(500.0, leilao.tresMaioresLances()[2].valor, DELTA)
     }
 }

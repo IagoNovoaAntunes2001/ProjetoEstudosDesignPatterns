@@ -28,4 +28,10 @@ data class Leilao(
             maiorLance = valorLance
         }
     }
+
+    fun tresMaioresLances(): List<Lance> {
+        var quantidadeMaximaLines = lances?.size
+        if (lances?.size!! > 3) quantidadeMaximaLines = 3
+        return quantidadeMaximaLines?.let { lances?.subList(0, it) }!!
+    }
 }
