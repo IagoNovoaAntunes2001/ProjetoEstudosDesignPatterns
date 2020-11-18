@@ -5,6 +5,7 @@ import org.junit.Test
 
 class LeilaoTest {
 
+    private val DELTA = 0.0001
     private var leilao: Leilao = Leilao("Console")
     private var iago: Usuario = Usuario("Iago")
 
@@ -18,7 +19,7 @@ class LeilaoTest {
         this.leilao = Leilao("Console")
         leilao.propoe(Lance(iago, 200.0))
 
-        assertEquals(200.0, leilao.maiorLance, 0.0001)
+        assertEquals(200.0, leilao.maiorLance, DELTA)
     }
 
     @Test
@@ -27,7 +28,7 @@ class LeilaoTest {
         leilao.propoe(Lance(iago, 100.0))
         leilao.propoe(Lance(Usuario("Dba"), 300.0))
 
-        assertEquals(300.0, leilao.maiorLance, 0.0001)
+        assertEquals(300.0, leilao.maiorLance, DELTA)
     }
 
     @Test
@@ -35,14 +36,14 @@ class LeilaoTest {
         leilao.propoe(Lance(iago, 300.0))
         leilao.propoe(Lance(Usuario("Cba"), 100.0))
 
-        assertEquals(300.0, leilao.maiorLance, 0.0001)
+        assertEquals(300.0, leilao.maiorLance, DELTA)
     }
 
     @Test
     fun getMenorLanc_QuandoRecebeApenasUmLance_DevolveMenor() {
         leilao.propoe(Lance(iago, 100.0))
 
-        assertEquals(100.0, leilao.menorLance, 0.0001)
+        assertEquals(100.0, leilao.menorLance, DELTA)
     }
 
     @Test
@@ -50,7 +51,7 @@ class LeilaoTest {
         leilao.propoe(Lance(iago, 100.0))
         leilao.propoe(Lance(Usuario("Dba"), 300.0))
 
-        assertEquals(100.0, leilao.menorLance, 0.0001)
+        assertEquals(100.0, leilao.menorLance, DELTA)
     }
 
     @Test
@@ -58,15 +59,18 @@ class LeilaoTest {
         leilao.propoe(Lance(iago, 300.0))
         leilao.propoe(Lance(Usuario("Cba"), 100.0))
 
-        assertEquals(100.0, leilao.menorLance, 0.0001)
+        assertEquals(100.0, leilao.menorLance, DELTA)
     }
 
     @Test
     fun getTresLances_QuandoReceberOsTres_QuandoRecebeExatosTresLances() {
         leilao.propoe(Lance(iago, 300.0))
-        leilao.propoe(Lance(Usuario("Caio"), 300.0))
-        leilao.propoe(Lance(Usuario("Paulo"), 300.0))
+        leilao.propoe(Lance(Usuario("Caio"), 500.0))
+        leilao.propoe(Lance(Usuario("Paulo"), 400.0))
 
         assertEquals(3, leilao.lances?.size)
+        assertEquals( 300.0,  leilao.lances?.get(0)?.valor!!, DELTA)
+        assertEquals(400.0, leilao.lances?.get(1)?.valor!!, DELTA)
+        assertEquals(500.0, leilao.lances?.get(2)?.valor!!, DELTA)
     }
 }
