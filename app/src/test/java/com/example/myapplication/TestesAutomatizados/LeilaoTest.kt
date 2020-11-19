@@ -109,4 +109,16 @@ class LeilaoTest {
         assertEquals(400.0, leilao.tresMaioresLances()[1].valor, DELTA)
         assertEquals(500.0, leilao.tresMaioresLances()[2].valor, DELTA)
     }
+
+    @Test
+    fun getValorZeroParaMaiorLance_quandoNaoHouverValores_DevolverZero() {
+        assertEquals(0.0, leilao.maiorLance, DELTA)
+    }
+
+    @Test
+    fun getValorZeroParaMenorLance_quandoNaoHouverValores_DevolverZero() {
+        println(leilao.menorLance)
+        assertEquals(0.0, leilao.menorLance, DELTA)
+    }
+
 }

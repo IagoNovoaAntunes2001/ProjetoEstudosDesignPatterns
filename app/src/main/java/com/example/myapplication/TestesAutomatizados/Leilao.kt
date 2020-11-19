@@ -3,13 +3,23 @@ package com.example.myapplication.TestesAutomatizados
 data class Leilao(
     val descricao: String,
     var lances: List<Lance>? = listOf(),
-    var maiorLance: Double = Double.MIN_VALUE,
-    var menorLance: Double = Double.MAX_VALUE
+    var maiorLance: Double = 0.0,
+    var menorLance: Double = 0.0
 ) {
     fun propoe(lance: Lance) {
         insertAndOrderList(lance)
+        if (verifyIfIsTheFirstStep(lance)) return
         calculaMaiorLance(valorLance = lance.valor)
         calculaMenorLance(valorLance = lance.valor)
+    }
+
+    private fun verifyIfIsTheFirstStep(lance: Lance): Boolean {
+        if (lances?.size == 1) {
+            maiorLance = lance.valor
+            menorLance = lance.valor
+            return true
+        }
+        return false
     }
 
     private fun insertAndOrderList(lance: Lance) {
