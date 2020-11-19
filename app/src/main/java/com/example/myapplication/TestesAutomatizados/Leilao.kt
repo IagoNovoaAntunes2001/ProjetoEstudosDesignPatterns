@@ -7,6 +7,8 @@ data class Leilao(
     var menorLance: Double = 0.0
 ) {
     fun propoe(lance: Lance) {
+        if (maiorLance > lance.valor) return
+
         insertAndOrderList(lance)
         if (verifyIfIsTheFirstStep(lance)) return
         calculaMaiorLance(valorLance = lance.valor)
@@ -43,5 +45,9 @@ data class Leilao(
         var quantidadeMaximaLines = lances?.size
         if (lances?.size!! > 3) quantidadeMaximaLines = 3
         return quantidadeMaximaLines?.let { lances?.subList(0, it) }!!
+    }
+
+    fun quantidadeDeLances(): Int? {
+        return lances?.size
     }
 }
